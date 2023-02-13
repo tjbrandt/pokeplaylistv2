@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist Results</title>
+    <%- include("partials/links") %>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <section class="pokemonInfoContainer">
+      <div id="congratsContainer">
+        <h2>Congratulations,</h2>
+        <h2><%= choiceName %> now has a playlist!</h2>
+        <div id="pokemonImageBox">
+          <img src="<%= pokeDisplayImage %>" alt="chosen_pokemon_img" />
+        </div>
+        <div class="congratsButtons">
+          <div>
+            <form
+              action="<%= playlistLink %> "
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <button class="pokeButton">Go to Spotify</button>
+            </form>
+          </div>
+          <div>
+            <form action="/check_for_refresh">
+              <button class="pokeButton">Return Home</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

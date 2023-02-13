@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Pokemon Choice</title>
+    <%- include("partials/links") %>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <section class="pokemonInfoContainer">
+      <div id="choiceBox">
+        <h1>You've Chosen:</h1>
+        <div id="pokemonImageBox">
+          <img
+            src=" <%= pokeDataToRender.pokemonImage %>  "
+            alt="current_pokemon_choice"
+          />
+        </div>
+        <div id="nameContainer">
+          <h2>Name : <%= pokeDataToRender.choiceName %></h2>
+        </div>
+        <%# TODO Decide if/how to use official PokeType images rather than
+        name.toUppercase, for better design %>
+        <div id="typesContainer">
+          <h3>
+            Type(s): <% if (locals.pokeDataToRender.secondPokemonType) { %> <%=
+            (pokeDataToRender.firstPokemonType) %>, <%=
+            (pokeDataToRender.secondPokemonType) %> <% } else { %> <%=
+            (pokeDataToRender.firstPokemonType) %> <% } %>
+          </h3>
+        </div>
+      </div>
+
+      <div id="pokeplaylistConfirmation">
+        <h2>Are You Sure?</h2>
+        <div class="confirmButtons">
+          <div>
+            <form action="/create_pokeplaylist" method="post" id="pokeForm">
+              <input
+                type="hidden"
+                name="pokemon"
+                value=" <%= pokeDataToRender.choiceName %> "
+              />
+              <button class="pokeButton">Yes!</button>
+            </form>
+          </div>
+          <div>
+            <form action="/main" method="get" id="pokeForm">
+              <button class="pokeButton">No!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

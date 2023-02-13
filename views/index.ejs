@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokePlaylist</title>
+
+    <%- include("partials/links") %>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <section class="pokemonInfoContainer">
+      <div id="queryBox">
+        <div id="hpiContainer">
+          <img id="homePageImage" src="\images\question_mark_two.png" alt="" />
+        </div>
+
+        <form action="/confirm_pokemonchoice" method="post">
+          <%# TODO add some form of validation before executing post request, or
+          searchable list with all the pokemon available %>
+          <input
+            type="text"
+            id="pokeInput"
+            placeholder="Pokemon Name Here"
+            name="pokemon"
+          />
+          <button class="pokeButton">I Choose You!</button>
+          <p>
+            <i
+              >Not sure which Pokemon to try? Find a list
+              <a target="_blank" href="https://www.pokemon.com/us/pokedex/"
+                >here</a
+              >!</i
+            >
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

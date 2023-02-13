@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <%- include("partials/links") %>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="errorDisplay">
+      <div>
+        <img src="/images/meltan_pokemon.png" alt="meltan_pokemon" />
+      </div>
+
+      <p>
+        Sorry, there's been an issue with getting your playlist. Either the
+        Pokemon you've chosen does not exist, or our site is experiencing
+        difficulties.
+      </p>
+      <p>Please go back to the beginning and try again.</p>
+
+      <div>
+        <form action="/login" method="get" id="pokeForm">
+          <button class="pokeButton">Go Home</button>
+        </form>
+      </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

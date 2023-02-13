@@ -1,0 +1,341 @@
+/* Schema
+Colors:
+"Steel Teal" - #548687, darker blueish
+"Aero Blue" - #C5F4E0, light green-blue
+"Rick Black FOGRA" - #001524, background almost black
+"Honey Yellow" - #fbaf00, yellow-orange color for buttons
+"Fiery Rose" - #FA4E65, not sure yet what to use, but seemed to fit color scheme
+
+from https://coolors.co/001524-c5f4e0-fa4e65-548687-fbaf00 
+
+*/
+
+@font-face {
+  font-family: "New Rodin";
+  src: url(fonts/FOT-NewRodin\ Pro\ EB.otf);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 251, 251);
+  margin: 0%;
+  font-family: "New Rodin";
+}
+
+/* Header Styling */
+/* Currently, a picture of Meloetta exists but is not shown (for mobile users). At larger breakpoints, it will appear.*/
+
+.melBanner {
+  grid-row: 1 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#melContainer {
+  display: none;
+}
+
+.melBanner img {
+  width: 100%;
+  height: auto;
+}
+
+#pplogo {
+  margin-top: 2%;
+  width: 75%;
+  height: auto;
+}
+
+.welcomeDiv {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+  background-color: #548687;
+  font-size: 0.75em;
+  width: 100%;
+}
+
+.welcomeDiv h1 {
+  grid-column: 2 3;
+  grid-row: 1 2;
+}
+
+.introP {
+  background-color: #c5f4e0;
+  text-align: center;
+}
+
+.introSect {
+  display: flex;
+  flex-direction: column;
+  font-family: "New Rodin";
+}
+
+/* Footer Styling */
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  justify-self: end;
+}
+
+.footerDiv {
+  display: grid;
+  width: 100%;
+  background-color: #216061;
+  align-items: center;
+}
+
+.footerDiv :nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.footerDiv :nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.footerDiv :nth-child(3) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.footerDiv a {
+  display: grid;
+  justify-content: center;
+  padding: 4%;
+}
+
+.logos {
+  height: 2.5em;
+  margin: 1%;
+}
+
+/* Form Styles */
+/* Forms exist on multiple pages; this section has styles for all of them. */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form button {
+  font-family: "New Rodin";
+}
+
+.pokeButton {
+  background-color: #fbaf00;
+  font-size: 2em;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 1px 1px 1px #001524;
+  margin-bottom: 1%;
+  margin-top: 2%;
+}
+
+form input {
+  font-size: 1.5em;
+  height: 2em;
+  width: 75%;
+  text-align: center;
+  font-family: "New Rodin";
+}
+
+/* Login Page Styles */
+
+.getStarted {
+  text-align: center;
+  background-color: #fbaf00;
+  border-radius: 10px;
+  margin: 10%;
+  box-shadow: 1px 1px 1px #001524;
+}
+
+.getStarted a {
+  text-decoration: none;
+  font-size: 2em;
+  font-family: "New Rodin";
+  color: white;
+  text-shadow: 1px 1px 1px #001524;
+}
+
+/* Pokemon Information Container */
+/* Most pages have a container that shows Pokemon information and elements for that page.*/
+
+.pokemonInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pokemonInfoContainer h1 {
+  margin: 0%;
+}
+.pokemonInfoContainer h2 {
+  margin: 0%;
+}
+.pokemonInfoContainer h3 {
+  margin: 0%;
+}
+
+.pokemonInfoContainer div {
+  text-align: center;
+}
+
+.pokemonInfoContainer img {
+  width: 50%;
+  height: auto;
+}
+
+/* Main Page Styles */
+
+#queryBox {
+  background-color: #fa4e65;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hpiContainer {
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+#homePageImage {
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+/* Pokemon Confirmation Page Styles*/
+
+#choiceBox {
+  background-color: #fa4e65;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pokemonImageBox {
+  background-color: rgba(255, 249, 249, 0.4);
+}
+
+#nameContainer,
+#typesContainer {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  width: 100%;
+}
+
+#pokeplaylistConfirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pokeplaylistConfirmation h2 {
+  margin: 0%;
+}
+
+#pokeplaylistConfirmation .confirmButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 4%;
+}
+
+/* Playlist Created/Congratulations Styles*/
+
+#congratsContainer {
+  display: flex-column;
+  align-items: center;
+  background-color: #c5f4e0;
+}
+
+.congratsButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.congratsButtons div {
+  width: 75%;
+}
+
+/* Error Page Styles*/
+
+.errorDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorDisplay p {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.errorDisplay div {
+  text-align: center;
+}
+
+.errorDisplay img {
+  height: auto;
+  width: 50%;
+  padding-bottom: 1%;
+}
+
+/* Media Queries*/
+/* Breakpoints (based on Bootstrap suggestions): 
+1. Small ->  >= 576px
+2. Medium -> >= 768px
+3. Large ->  >= 992px
+TODO consider adding XL -> >= 1200px; come back to this after checking
+
+*/
+
+@media screen and (min-width: 576px) {
+  #pplogo {
+    width: 50%;
+    height: auto;
+  }
+  .errorDisplay {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #pplogo {
+    width: 35%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #pplogo {
+    width: 25%;
+    height: auto;
+  }
+  .pokemonInfoContainer div:first-of-type {
+    width: 50%;
+  }
+  #pokemonImageBox {
+    width: 100%;
+  }
+  #pokeplaylistConfirmation {
+    margin-bottom: 2%;
+  }
+}
