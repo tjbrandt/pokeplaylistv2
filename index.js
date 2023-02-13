@@ -50,7 +50,6 @@ app.get("/login", (req, res) => {
     redirect_uri: redirectURI,
     scope: "playlist-modify-public playlist-modify-private",
   });
-  console.log(authParams);
 
   const loginUrl = authUrl + authParams.toString();
 
