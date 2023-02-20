@@ -1,7 +1,5 @@
 // These are "tables" that contain converted Pokemon elements for use in the Spotify API:
 // 1. Type: Each Pokemon has one or more "elemental" types associated with it, and these correspond to different music genres based on the overlapping emotion/feeling between the two. The resulting conversion will be used to filter Spotify search results by "genre".
-// 2. Habitat: The habitat a Pokemon lives in can overlap with different ambiences in music, even within the same genre (think different types of rock or hip-hop). The resulting conversion will be a part of the query string sent to the Spotify API.
-// Elements not being converted (ex. Pokemon abilities) will be inserted as part of the query string to Spotify API. Other elements may need to be converted that are not part of the current build, but that is a bridge to cross when arrived.
 
 import axios from "axios";
 
@@ -71,23 +69,4 @@ const typeConversion = {
   fairy: "pop",
 };
 
-//TODO figure out dual-typing system. Current issue is that combining two genres directly doesn't usually lead to results (ex. there's no songs in Spotify that work for a Fire/Ghost type, as there's no result that meets both "dance electric" and "witch house"). Current ideas a) establish extra entries in typeConversion or make new array for combined types with their own types (ex. Fire/Ghost might become "rave" genre ), b) set a check for a dual-type pokemon, takes its primary type and uses a different genre, but doesn't use/consider second type (ex. Fire/Ghost becomes a variant of "dance electric", but not necessarily a variant related to "witch house" )
-
-const habitatConversion = {
-  cave: "hollow",
-  forest: "calm",
-  grassland: "orchestral",
-  mountain: "intense",
-  rare: "epic",
-  "rough-terrain": "desert",
-  sea: "ocean",
-  urban: "city",
-  "waters-edge": "water",
-};
-
-export {
-  typeConversion,
-  habitatConversion,
-  findPokemonTypes,
-  convertToUppercase,
-};
+export { typeConversion, findPokemonTypes, convertToUppercase };

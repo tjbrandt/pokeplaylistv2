@@ -158,6 +158,10 @@ app.get("/main", (req, res) => {
 //a page to display the Pokemon of choice, and to ask the user to confirm their choice before going to the next steps
 app.post("/confirm_pokemonchoice", (req, res) => {
   const { pokemon } = req.body;
+  if (!pokemon) {
+    res.render("error.ejs");
+  }
+
   const pokemonChoice = convertToUppercase(pokemon);
   const pokemonTypes = findPokemonTypes(pokemon);
 
